@@ -18,7 +18,6 @@ To submit changes on form closing, transform RichEditControl's model back to the
  - Combine all RichTextRun objects into [RichTextString](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Spreadsheet.RichTextString);
  - Assign [RichTextString](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Spreadsheet.RichTextString) as a cell value using the [Range.SetRichText](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Spreadsheet.Range.SetRichText(DevExpress.Spreadsheet.RichTextString)) method.
 
-*See also:  
+See also:  
 [How to: Apply Rich Formatting to Cell Text](https://docs.devexpress.com/WindowsForms/120599/controls-and-libraries/spreadsheet/examples/formatting/how-to-apply-rich-formatting-to-cell-text)
-
-[How to: Retrieve the List of Document Fonts using the Visitor-Iterator Pattern](https://docs.devexpress.com/WindowsForms/116746/controls-and-libraries/rich-text-editor/examples/automation/how-to-retrieve-the-list-of-document-fonts-using-the-visitor-iterator-pattern)*
+[How to: Retrieve the List of Document Fonts using the Visitor-Iterator Pattern](https://docs.devexpress.com/WindowsForms/116746/controls-and-libraries/rich-text-editor/examples/automation/how-to-retrieve-the-list-of-document-fonts-using-the-visitor-iterator-pattern)
