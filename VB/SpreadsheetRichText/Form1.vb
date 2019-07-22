@@ -28,8 +28,9 @@ Public Class Form1
     Private Sub spreadsheetControl_CellBeginEdit(sender As Object, e As DevExpress.XtraSpreadsheet.SpreadsheetCellCancelEventArgs) Handles spreadsheetControl.CellBeginEdit
         If e.Cell.HasRichText Then
             e.Cancel = True
-            Dim richEditForm As New RichTextEditForm(e.Cell)
-            richEditForm.ShowDialog()
+            Using richEditForm As New RichTextEditForm(e.Cell)
+                richEditForm.ShowDialog()
+            End Using
         End If
     End Sub
 
@@ -44,7 +45,8 @@ Public Class Form1
     End Sub
 
     Private Sub SetRichTextItemClick(ByVal sender As Object, ByVal e As EventArgs)
-        Dim richEditForm As New RichTextEditForm(spreadsheetControl.ActiveCell)
-        richEditForm.ShowDialog()
+        Using richEditForm As New RichTextEditForm(spreadsheetControl.ActiveCell)
+            richEditForm.ShowDialog()
+        End Using
     End Sub
 End Class

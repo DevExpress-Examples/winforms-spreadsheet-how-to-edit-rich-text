@@ -33,8 +33,8 @@ namespace SpreadsheetRichText
             if (e.Cell.HasRichText)
             {
                 e.Cancel = true;
-                RichTextEditForm richEditForm = new RichTextEditForm(e.Cell);
-                richEditForm.ShowDialog();
+                using (RichTextEditForm richEditForm = new RichTextEditForm(e.Cell))
+                    richEditForm.ShowDialog();
             }
         }
 
@@ -53,8 +53,8 @@ namespace SpreadsheetRichText
 
         private void SetRichTextItemClick(object sender, EventArgs e)
         {
-            RichTextEditForm richEditForm = new RichTextEditForm(spreadsheetControl.ActiveCell);
-            richEditForm.ShowDialog();
+            using (RichTextEditForm richEditForm = new RichTextEditForm(spreadsheetControl.ActiveCell))
+                richEditForm.ShowDialog();
         }
     }
 }
