@@ -1,3 +1,8 @@
+<!-- default badges list -->
+![](https://img.shields.io/endpoint?url=https://codecentral.devexpress.com/api/v1/VersionRange/193709120/19.1.4%2B)
+[![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T828665)
+[![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
+<!-- default badges end -->
 # How to edit rich text in SpreadsheetControl
 The main idea of this example is to create a custom form with RichEditControl inside and show this form instead of SpreadsheetControl's built-in in-place editor to edit a cell's rich text using the RichEditControl component's facilities. In this example, the custom edit form is shown on an attempt to open an in-place editor for cells with rich text (it's invoked in the [CellBeginEdit](https://docs.devexpress.com/WindowsForms/DevExpress.XtraSpreadsheet.SpreadsheetControl.CellBeginEdit) event handler). Also, it is possible to show this form by clicking the “Set Rich Text” [context menu](https://docs.devexpress.com/WindowsForms/16378/controls-and-libraries/spreadsheet/examples/customization/how-to-customize-or-hide-the-popup-menu) item.
 
