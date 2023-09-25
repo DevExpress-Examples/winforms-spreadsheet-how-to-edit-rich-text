@@ -7,7 +7,10 @@
 
 The main idea of this example is to create a custom form with RichEditControl inside and show this form instead of SpreadsheetControl's built-in in-place editor to edit a cell's rich text using the RichEditControl component's facilities. In this example, the custom edit form is shown in an attempt to open an in-place editor for cells with rich text (it's invoked in the [CellBeginEdit](https://docs.devexpress.com/WindowsForms/DevExpress.XtraSpreadsheet.SpreadsheetControl.CellBeginEdit) event handler). Also, it is possible to show this form by clicking the “Set Rich Text” [context menu](https://docs.devexpress.com/WindowsForms/16378/controls-and-libraries/spreadsheet/examples/customization/how-to-customize-or-hide-the-popup-menu) item.
 
+# Implementation Details
+
 It's necessary to solve two tasks at the custom form's level to make it edit the cell's rich text:
+
  1. Load and show the cell's rich text in RichEditControl when an end-user opens a custom form.
  2. Post changes from RichEditControl to the Spreadsheet cell once the user finishes editing rich text and closes the form.
 
@@ -20,6 +23,7 @@ The solution for the first task is to transform the cell's rich text from the Sp
 Now the user can edit the rich text in RichEditControl using the Bars UI.
 
 To submit changes on form closing, transform RichEditControl's model back to the Spreadsheet model and build a new Spreadsheet cell value as follows:
+
  - Split the RichEditControl document into text runs using a custom [Document Visitor](https://docs.devexpress.com/OfficeFileAPI/DevExpress.XtraRichEdit.API.Native.DocumentVisitorBase) class;
  - Transform each text run into a Spreadsheet [RichTextRun](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Spreadsheet.RichTextRun) object;
  - Combine all RichTextRun objects into [RichTextString](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Spreadsheet.RichTextString);
@@ -27,11 +31,11 @@ To submit changes on form closing, transform RichEditControl's model back to the
 
 # Files to Review
 
-[RichTextEditForm.cs](./CS/SpreadsheetRichText/RichTextEditForm.cs)
-
-[Form1.cs](./CS/SpreadsheetRichText/Form1.cs)
-
-[CustomDocumentVisitor.cs](./CS/SpreadsheetRichText/CustomDocumentVisitor.cs)
+| C# | Visual Basic |
+|---------|----------|
+| [Form1.cs](./CS/SpreadsheetRichText/Form1.cs) | [Form1.vb](./VB/SpreadsheetRichText/Form1.vb) |
+| [RichTextEditForm.cs](./CS/SpreadsheetRichText/RichTextEditForm.cs) | [RichTextEditForm.vb](./VB/SpreadsheetRichText/RichTextEditForm.vb) |
+| [CustomDocumentVisitor.cs](./CS/SpreadsheetRichText/CustomDocumentVisitor.cs) | [CustomDocumentVisitor.vb](./VB/SpreadsheetRichText/CustomDocumentVisitor.vb) |
 
 # More Examples
 
@@ -39,5 +43,5 @@ To submit changes on form closing, transform RichEditControl's model back to the
 
 # Documentation
 
-* [](https://docs.devexpress.com/WindowsForms/120599/controls-and-libraries/spreadsheet/examples/formatting/how-to-apply-rich-formatting-to-cell-text)
+* [How to: Apply Rich Formatting to Cell Text](https://docs.devexpress.com/WindowsForms/120599/controls-and-libraries/spreadsheet/examples/formatting/how-to-apply-rich-formatting-to-cell-text)
 * [How to: Retrieve the List of Document Fonts using the Visitor-Iterator Pattern](https://docs.devexpress.com/WindowsForms/116746/controls-and-libraries/rich-text-editor/examples/automation/how-to-retrieve-the-list-of-document-fonts-using-the-visitor-iterator-pattern)
